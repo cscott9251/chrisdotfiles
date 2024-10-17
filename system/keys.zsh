@@ -1,0 +1,1 @@
+alias pubkey="more ~/.ssh/*.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
