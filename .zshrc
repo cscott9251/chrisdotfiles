@@ -39,10 +39,10 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -Uz compinit promptinit
+autoload -Uz compinit #promptinit
 
-promptinit
-prompt pure
+#promptinit
+#prompt pure
 
 compinit
 
@@ -57,6 +57,7 @@ done
 # Virtualenvwrapper
 
 #source $HOME/.local/bin/virtualenvwrapper.sh
+
 
 
 # Pyenv
@@ -135,6 +136,19 @@ COMPLETION_WAITING_DOTS="true"
 
 #[ -f ~/zsh/.fzf.zsh ] && source ~/zsh/.fzf.zsh
 
+
+# ssh-agent settings
+
+setopt extended_glob
+
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/*id*~*.pub(N)
+#zstyle :omz:plugins:ssh-agent helper ksshaskpass
+#zstyle :omz:plugins:ssh-agent lazy yes
+#zstyle :omz:plugins:ssh-agent ssh-add-args -K -c -a ~/.ssh/id_*
+
+
+
 plugins=(git 
 gitfast 
 fzf 
@@ -144,6 +158,11 @@ zsh-syntax-highlighting
 F-Sy-H zsh-autocomplete 
 ssh-agent 
 git-open)
+
+
+
+
+
 
 #fzf zsh-z zsh-autosuggestionsfzf zsh-z zsh-autosuggestions
 
